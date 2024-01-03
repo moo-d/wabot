@@ -9,6 +9,12 @@
   "author": "moo-d",
   "license": "ISC",
   "dependencies": {
-    "@whiskeysockets/baileys": "github:WhiskeySockets/Baileys"
+    "@hapi/boom": "^10.0.1",
+    "@whiskeysockets/baileys": "github:WhiskeySockets/Baileys",
+    "file-type": "^16.5.3",
+    "fluent-ffmpeg": "^2.1.2",
+    "node-fetch": "^2.0.0",
+    "pino": "^8.17.1",
+    "qrcode-terminal": "^0.12.0"
   }
 }
