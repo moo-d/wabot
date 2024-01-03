@@ -132,28 +132,28 @@ async function handler(m, conn, map) {
       )
 
     global.db = new Database(msg, cmd)
-    global.setting = db.read('./setting.json')
-    global.bot = db.read('./database/Bot/data.json')
+    global.setting = db.read('setting')
+    global.bot = db.read('bot')
 
     var owner = setting.bot.owner
     let isOwner = owner
       .map((v) => v.replace(/[^0-9]/g, "") + "@s.whatsapp.net")
       .includes(sender)
 
-    global.group = db.read('./database/Group/data.json')
-    if (!global.group[from]) {
+    global.group = db.read('group')
+    if (!global.group[from] && isGroup) {
       global.group[from] = {
         id: from
       }
-      db.save('./database/Group/data.json', group)
+      db.save('group', group)
     }
 
-    global.user = db.read('./database/User/data.json')
+    global.user = db.read('user')
     if (!global.user[from]) {
       global.user[sender] = {
         id: sender
       }
-      db.save('./database/User/data.json', user)
+      db.save('user', user)
     }
 
     if (bot.autoRead) await conn.readMessages([msg.key])
