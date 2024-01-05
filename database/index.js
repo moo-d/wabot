@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs')
+const path = require('path')
 
 class Database {
   constructor(msg, cmd) {
@@ -10,27 +10,28 @@ class Database {
       ":command:": msg.command,
       ":cmd.category:": cmd.category.replace(/ /gi, ""),
       ":cmd.description:": cmd.desc,
-      ":cmd.example:": cmd.example.replace(/%cmd/gi, msg.command)
+      ":cmd.example:": cmd.example.replace(/%cmd/gi, msg.command),
+      ":cd.timeleft:": 0
     }
   }
 
   // Method to read data from a JSON file
   read(identifier) {
-    var jsonData = JSON.parse(fs.readFileSync(this.getFilePath(identifier), 'utf8'));
-    return this.recursiveReplace(jsonData);
+    var jsonData = JSON.parse(fs.readFileSync(this.getFilePath(identifier), 'utf8'))
+    return this.recursiveReplace(jsonData)
   }
 
   // Method to save data to a JSON file
   save(identifier, data) {
-    var jsonString = JSON.stringify(this.recursiveReplace(data), null, 2);
-    fs.writeFileSync(this.getFilePath(identifier), jsonString, 'utf8');
+    var jsonString = JSON.stringify(this.recursiveReplace(data), null, 2)
+    fs.writeFileSync(this.getFilePath(identifier), jsonString, 'utf8')
   }
 
   // Method to get the file path based on the identifier
   getFilePath(identifier) {
     // Concatenate the data directory with the JSON file name
     if (identifier == 'setting') return './setting.json'
-    else return path.join(`./database/${identifier}.json`);
+    else return path.join(`./database/${identifier}.json`)
   }
 
   // Method for recursive replacement in a JSON object
@@ -38,23 +39,29 @@ class Database {
     for (let prop in obj) {
       if (obj[prop] instanceof Object) {
         // Recursively call recursiveReplace for nested objects
-        obj[prop] = this.recursiveReplace(obj[prop]);
+        obj[prop] = this.recursiveReplace(obj[prop])
       } else if (typeof obj[prop] === 'string') {
         // Perform the replacement in string values
-        obj[prop] = this.replaceMultiple(obj[prop], this.replacements);
+        obj[prop] = this.replaceMultiple(obj[prop], this.replacements)
       }
     }
-    return obj;
+    return obj
   }
 
   // Method for multiple replacements in a string
   replaceMultiple(str, replacements) {
     for (let key in replacements) {
-      const pattern = new RegExp(key, 'g');
-      str = str.replace(pattern, replacements[key]);
+      const pattern = new RegExp(key, 'g')
+      str = str.replace(pattern, replacements[key])
     }
-    return str;
+    return str
+  }
+
+  // Method to set the value of ":cd.timeleft:"
+  setTimeLeft(value) {
+    // Set the value of ":cd.timeleft:" in the replacements object
+    this.replacements[":cd.timeleft:"] = value
   }
 }
 
-module.exports = Database;
+module.exports = Database
