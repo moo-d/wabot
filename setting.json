@@ -1,74 +1,94 @@
 {
   "bot": {
     "name": "go-bot",
-    "owner": ["+62 88xx"],
-    "defaultStickerPack": {
-      "packname": "Original"
+    "owner": ["+62 88xx"]
+  },
+  "defaultCooldown": 3,
+  "defaultSticker": {
+    "packname": ""
+  },
+  "chat": {
+    "missingMedia": {
+      "text": "Kirim/reply pesan media untuk mengaktifkan fitur :command:",
+      "react": false,
+      "emote": null
     },
-    "chat": {
-      "success": {
-        "text": null,
-        "react": true,
-        "emote": "✅"
-      },
-      "failed": {
-        "text": null,
-        "react": true,
-        "emote": "❎"
-      },
-      "wait": {
-        "text": null,
-        "react": true,
-        "emote": "🕙"
-      },
-      "cmdOnlyGroup": {
-        "text": [
-          "Bot sedang dalam mode grup, silahkan gunakan bot di dalam grup",
-          "Maaf :name:, bot sedang dalam mode grup",
-          "Untuk saat ini, bot hanya bisa digunakan dalam grup"
-        ],
-        "react": false,
-        "emote": null
-      },
-      "onlyOwner": {
-        "text": [
-          "Perintah ini hanya bisa digunakan oleh pemilik bot",
-          "Maaf :name:, perintah ini tidak dapat digunakan dikarenakan kamu bukan pemilik bot",
-          "Kamu bukan pemilik bot"
-        ],
-        "react": false,
-        "emote": null
-      },
-      "cmdAdmin": {
-        "text": [
-          "Perintah ini hanya dapat kamu gunakan jika kamu adalah admin grup",
-          "Kamu tidak dapat menggunakan perintah ini karena kamu bukanlah admin grup",
-          "Perintah ini hanya digunakan untuk admin grup"
-        ],
-        "react": false,
-        "emote": null
-      },
-      "cmdBotAdmin": {
-        "text": [
-          "Perintah ini hanya dapat digunakan jika bot telah menjadi admin grup",
-          "Dikarenakan aku bukan admin grup, perintah ini tidak dapat digunakan",
-          "Bot saat ini bukanlah admin grup, jadikan bot admin grup jika ingin menggunakan perintah ini"
-        ],
-        "react": false,
-        "emote": null
-      },
-      "withoutQuery": {
-        "text": "*:command:* adalah fitur dengan kategori :cmd.category:, :cmd.description:\n\nContoh penggunaan:\n:cmd.example:",
-        "react": false,
-        "emote": null
-      },
-      "cmdPrivate": {
-        "text": [
-          "Perintah ini hanya dapat digunakan di private chat",
-          "Gunakan perintah ini di private chat",
-          "Perintah ini dibuat hanya untuk digunakan di dalam private chat"
-        ]
-      }
+    "largeFileSize": {
+      "text": [
+        "Ukuran file terlalu besar",
+        "File yang kamu berikan terlalu besar",
+        "Ukuran file ini terlalu besar"
+      ],
+      "react": false,
+      "emote": null
+    },
+    "spam": {
+      "text": null,
+      "react": true,
+      "emote": "⚠️"
+    },
+    "success": {
+      "text": null,
+      "react": true,
+      "emote": "✅"
+    },
+    "failed": {
+      "text": null,
+      "react": true,
+      "emote": "❎"
+    },
+    "wait": {
+      "text": null,
+      "react": true,
+      "emote": "🕙"
+    },
+    "cmdOnlyGroup": {
+      "text": [
+        "Bot sedang dalam mode grup, silahkan gunakan bot di dalam grup",
+        "Maaf :name:, bot sedang dalam mode grup",
+        "Untuk saat ini, bot hanya bisa digunakan dalam grup"
+      ],
+      "react": false,
+      "emote": null
+    },
+    "onlyOwner": {
+      "text": [
+        "Perintah ini hanya bisa digunakan oleh pemilik bot",
+        "Maaf :name:, perintah ini tidak dapat digunakan dikarenakan kamu bukan pemilik bot",
+        "Kamu bukan pemilik bot"
+      ],
+      "react": false,
+      "emote": null
+    },
+    "cmdAdmin": {
+      "text": [
+        "Perintah ini hanya dapat kamu gunakan jika kamu adalah admin grup",
+        "Kamu tidak dapat menggunakan perintah ini karena kamu bukanlah admin grup",
+        "Perintah ini hanya digunakan untuk admin grup"
+      ],
+      "react": false,
+      "emote": null
+    },
+    "cmdBotAdmin": {
+      "text": [
+        "Perintah ini hanya dapat digunakan jika bot telah menjadi admin grup",
+        "Dikarenakan aku bukan admin grup, perintah ini tidak dapat digunakan",
+        "Bot saat ini bukanlah admin grup, jadikan bot admin grup jika ingin menggunakan perintah ini"
+      ],
+      "react": false,
+      "emote": null
+    },
+    "withoutQuery": {
+      "text": "*:command:* adalah fitur dengan kategori :cmd.category:, :cmd.description:\n\nContoh penggunaan:\n:cmd.example:",
+      "react": false,
+      "emote": null
+    },
+    "cmdPrivate": {
+      "text": [
+        "Perintah ini hanya dapat digunakan di private chat",
+        "Gunakan perintah ini di private chat",
+        "Perintah ini dibuat hanya untuk digunakan di dalam private chat"
+      ]
     }
   }
 }
